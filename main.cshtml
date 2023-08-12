@@ -1,0 +1,158 @@
+﻿@page
+@model worldEditHelper.Pages.mainModel
+@{
+}
+
+<style>
+    /* ローディング画面 */
+.loader {
+  color: #ffffff;
+  font-size: 90px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 72px auto;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@@-webkit-keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@@keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.box5 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+.box5 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.list {
+  color: #668ad8;/*文字色*/
+  border: dashed 2px #668ad8;/*破線 太さ 色*/
+  background: #f1f8ff; /*背景色*/
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+
+.list {
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+</style>
+
+<div id="loading">
+  <div class="spinner"></div>
+</div>
+ 
+<!-- コンテンツ部分 -->
+<div class="gallery">
+    <div class="list">
+   <ul>
+  <li>//wand</li>
+  <li>CSS</li>
+  <li>Photoshop</li>
+  <li>Illustrator</li>
+</ul>
+</div>
+   <div class="box5">
+    <h1>「//wand」world editの範囲指定に必要なアイテムを手に入れるコマンドです
+    </h1>
+    </div>
+  <div class="item">
+    <!-- コピー対象要素とコピーボタン -->
+    <input id="copyTarget" type="text" value="//wand" readonly>
+    <button onclick="copyToClipboard()">Copy text</button>
+  </div>
+   
+ 
+</div>
+
+<script>
+    window.onload = function() {
+  const spinner = document.getElementById('loading');
+  spinner.classList.add('loaded');
+}
+
+function copyToClipboard() {
+            // コピー対象をJavaScript上で変数として定義する
+            var copyTarget = document.getElementById("copyTarget");
+
+            // コピー対象のテキストを選択する
+            copyTarget.select();
+
+            // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
+
+            // コピーをお知らせする
+            alert("クリップボードにコピーされました" + copyTarget.value);
+        }
+</script>
