@@ -1,0 +1,164 @@
+
+    
+    /*box*/
+      
+      .box5 {
+          padding: 0.5em 1em;
+          width: 720px;
+          overflow: hidden;
+          margin: 2em 0;
+          border: double 5px #4ec4d3;
+      }
+      .box5 p {
+          margin: 0; 
+          padding: 0;
+      }
+    
+      .cp_iptxt {
+        position: relative;
+        width: 80%;
+        margin: 40px 3%;
+    }
+    .cp_iptxt input[type='text'] {
+        font: 15px/24px sans-serif;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.3em;
+        transition: 0.3s;
+        letter-spacing: 1px;
+        color: #747474;
+        border: 1px solid #1b2538;
+        border-radius: 4px;
+    }
+    .ef input[type='text']:focus {
+        border: 1px solid #da3c41;
+        outline: none;
+        box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
+    }
+      
+      .kame{
+        background: #dadada;/*灰色に*/
+        width: 300px;
+        font-size: 21px;
+        text-align: left;
+        margin-right: auto;
+        height: 900px;
+        margin-left: auto;
+        border-radius :8px;
+        box-shadow :0px 0px 5px silver;
+        padding: 0.5em 0.5em 0.5em 2em;
+        margin: 15px;
+        line-height: 2em;
+        list-style:none
+      }
+
+      .kame li{
+        list-style:none
+      }
+
+      .kame pa{
+        line-height: 1.5;
+        padding: 0.5em 0;
+        padding-left:0
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+      }
+
+      .radio label{
+        display: block;
+        height: auto;
+        cursor: pointer;
+      }
+
+      .radio label focus {
+        color: aqua;
+      }
+      /*主な共通部分は省略*/
+
+button.btn--red.btn--cubic {
+    margin-top: 5px;
+    background-color: #999999;
+    border-bottom: 5px solid #acacac;
+  }
+  
+  button.btn--red.btn--cubic:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid #cacaca;
+  }
+  
+  button.btn--radius {
+    border-radius: 100vh;
+  }
+  
+  .fa-position-right {
+    position: absolute;
+    top: calc(50% - .5em);
+    right: 1rem;
+  }
+
+  
+      div#content {
+        width: 750px;
+        }
+        
+        div#main {
+        width: 400px;
+        float: right;
+        }
+
+
+        /*aa*/
+        #set, #wand {
+          display: none;
+        }
+        
+        #set.active, #wand.active {
+          display: block;
+        }
+
+    /* 基本のセレクトボックスのカスタマイズ */
+.select_set {
+  background: #cfcedb;
+  height: 40px;
+  width: 300px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.select_set::after {
+  position: absolute;
+  content: '';
+  width: 8px;
+  height: 8px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  z-index: -1;
+}
+
+select {
+  /* 初期化 */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  font-size: 16px;
+  padding: 0 10px;
+  height: 40px;
+  width: 300px;
+  position: relative;
+  background: #cfcedb url({https://ginneko-atelier.com}/assets/arrow.svg) no-repeat right 10px center / 16px auto;
+}
+
+option[selected][disabled] {
+  display: none;
+}

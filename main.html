@@ -1,0 +1,163 @@
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>main - worldEditHelper</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="./css/styles.css" asp-append-version="true" />
+        <link rel="stylesheet" href="./css/_layout.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/load.css">
+        <script src="stylesheet" href="./js/load.js"></script>
+    </head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html">worldEditHelper</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="./privacy.html">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="./main.html">Main</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+        </main>
+    </div>
+    
+    <div class="loading">
+        <span class="circle"></span>
+      </div>
+     
+<div id="content">
+<div id="main">
+
+<tr id="wand">
+    <div class="box5">
+        <form action="wand">
+        <h1>「//wand」</h1>
+        <h1>world editの範囲指定に必要なアイテムを手に入れるコマンドです</h1>
+    </div>
+        <div class="item">
+            <div class="cp_iptxt">
+                <label class="ef">
+                <!-- コピー対象要素とコピーボタン -->
+                <input id="copyTarget" type="text" value="//wand" readonly class="c-form-text">
+                <button onclick="copyToClipboard()" class="btn btn--red btn--radius btn--cubic">Copy text <i class="fas fa-angle-right fa-position-right"></i></button>
+                </label>
+            </div>
+        </div>
+    </form>
+</tr>
+</div>
+</div>
+
+<div id="content">
+    <div id="main">
+    
+    <tr id="set">
+        <div class="box5">
+            <h1>「//set (arg)」</h1>
+            <h1>wandで指定した範囲を (arg) で指定したブロックに変更します</h1>
+        </div>
+            <div class="item">
+                <div class="cp_iptxt">
+                    <label class="ef">
+                        <p class="select_set">
+                            <select name="Material">
+                            <option value="サンプル1">選択肢のサンプル1</option>
+                            <option value="サンプル2">選択肢のサンプル2</option>
+                            <option value="サンプル3">選択肢のサンプル3</option>
+                            <option value="サンプル4">選択肢のサンプル4</option>
+                            <option value="サンプル5">選択肢のサンプル5</option>
+                            </select>
+                        </p>
+                    <!-- コピー対象要素とコピーボタン -->
+                    <input id="copyTarget" type="text" value="//set" readonly class="c-form-text">
+                    <button onclick="copyToClipboard()" class="btn btn--red btn--radius btn--cubic">Copy text <i class="fas fa-angle-right fa-position-right"></i></button>
+                    </label>
+                </div>
+            </div>
+    </tr>
+</div>
+</div>
+
+
+<nav>
+
+    <!-- コンテンツ部分 -->
+    <div class="gallery">
+        <div class="menu">
+        <div class="kame">
+            <div class="radio">
+          <ul>
+            <label><input type="radio" name="example" value="wand" id="wand" onclick="entryChange1()"><label class="text" for="wand">//wand</label>
+            <label><input type="radio" name="example" value="set" id="set" onclick="entryChange1()"><label class="text" for="set">//set (arg)</label>
+          </ul>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+</nav>
+
+</div>
+
+    <script>
+    // load
+const loading = document.querySelector( '.loading' );
+ 
+ window.addEventListener( 'load', () => {
+    setTimeout(function () {
+        loading.classList.add( 'hide' );
+    }, 3000)
+ }, false );
+
+
+    function copyToClipboard() {
+                // コピー対象をJavaScript上で変数として定義する
+                var copyTarget = document.getElementById("copyTarget");
+    
+                // コピー対象のテキストを選択する
+                copyTarget.select();
+    
+                // 選択しているテキストをクリップボードにコピーする
+                document.execCommand("Copy");
+    
+                // コピーをお知らせする
+                alert("クリップボードにコピーされました" + copyTarget.value);
+            }
+    </script>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2023 - worldEditHelper - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+</footer>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="~/js/main.js"></script>
+<script src="~/js/site.js"></script>
+
+</body>
+
+</html>
